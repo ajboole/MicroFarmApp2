@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    >
+
+    <Button
+        android:layout_width="90dp"
+        android:layout_height="20dp"
+        android:id="@+id/settingsbutton"
+        android:background="@drawable/settings_button"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        />
+
+    <Button
+        android:layout_width="90dp"
+        android:layout_height="20dp"
+        android:id="@+id/historybutton"
+        android:background="@drawable/history_button"
+        android:layout_alignParentRight="true"
+        android:layout_above="@id/settingsbutton"
+        android:layout_marginTop="20dp"
+        />
+
+    <Button
+        android:layout_width="90dp"
+        android:layout_height="20dp"
+        android:id="@+id/statisticsbutton"
+        android:background="@drawable/statistics_button"
+        android:layout_alignParentRight="true"
+        android:layout_above="@id/historybutton"
+        />
+
+</RelativeLayout>

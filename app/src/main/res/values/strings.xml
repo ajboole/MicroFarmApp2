@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MicroFarmApp2</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_light_screen">LightScreen</string>
+    <string name="title_activity_temp_screen">TempScreen</string>
+    <string name="title_activity_water_screen">WaterScreen</string>
+    <string name="title_activity_humidity_screen">HumidityScreen</string>
+    <string name="title_activity_history">History</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_statistics">Statistics</string>
+    <string name="title_activity_main2">Main2Activity</string>
+</resources>
