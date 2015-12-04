@@ -66,7 +66,7 @@ public class InterfaceFragment extends Fragment {
     @TargetApi(Build.VERSION_CODES.M)
     public void statsButtonClicked(View view){
 
-        Intent i = new Intent(getContext(), Statistics.class);
+        Intent i = new Intent(getActivity().getBaseContext(), Statistics.class);
         startActivity(i);
 
 
@@ -78,7 +78,7 @@ public class InterfaceFragment extends Fragment {
     @TargetApi(Build.VERSION_CODES.M)
     public void historyButtonClicked(View view){
 
-        Intent i = new Intent(getContext(), History.class);
+        Intent i = new Intent(getActivity().getBaseContext(), History.class);
         startActivity(i);
 
     }
@@ -86,7 +86,7 @@ public class InterfaceFragment extends Fragment {
     @TargetApi(Build.VERSION_CODES.M)
     public void settingsButtonClicked(View view){
 
-        Intent i = new Intent(getContext(), Settings.class);
+        Intent i = new Intent(getActivity().getBaseContext(), Settings.class);
         startActivity(i);
 
     }

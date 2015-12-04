@@ -5,8 +5,8 @@
         android:duration="4500"
         android:fromDegrees="0"
         android:toDegrees="270"
-        android:pivotX="41.5%"
-        android:pivotY="43.75%"
+        android:pivotX="50%"
+        android:pivotY="50%"
         ></rotate>
 
 </set>

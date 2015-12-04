@@ -9,13 +9,34 @@
     android:background="#162028"
     >
 
+    <View
+        android:id="@+id/anchor6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="0dp"/>
+
+    <View
+        android:id="@+id/anchor7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_toRightOf="@+id/anchor6"
+        android:layout_below="@+id/anchor6"
+        android:layout_marginTop="37dp"
+        android:layout_marginLeft="31dp"
+        />
+
+
     <ImageView
         android:id="@+id/imageAnim"
-        android:src="@drawable/microsplashanim"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"/>
+        android:src="@drawable/microsplashanim2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignRight="@+id/anchor7"
+        android:layout_alignBottom="@+id/anchor7"
+
+
+        ></ImageView>
     <!--android:paddingBottom="49dp"
     android:paddingRight="59dp"
 
@@ -23,8 +44,8 @@
     android:layout_centerHorizontal="true"-->
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="400dp"
+        android:layout_height="281dp"
         android:id="@+id/imageView"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
