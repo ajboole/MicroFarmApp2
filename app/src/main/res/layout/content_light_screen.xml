@@ -54,7 +54,7 @@
         android:id="@+id/setnewtime"
         android:textColor="#FFFFFF"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_alignTop="@+id/anchorlightcenter"
+        android:layout_below="@+id/anchorlightcenter"
         android:layout_centerHorizontal="true" />
 
     <com.example.adam.microfarmapp2.FontBrownLight
@@ -64,7 +64,7 @@
         android:id="@+id/cycletime"
         android:textColor="#FFFFFF"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_alignTop="@+id/numberPicker"
+        android:layout_above="@+id/lightNumberPicker"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -75,24 +75,27 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginRight="0dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="0dp"
+        android:onClick="onClickSetLights"
         />
+
+    <com.example.adam.microfarmapp2.myNumberPicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lightNumberPicker"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        max="24"
+        min="0"
+        android:layout_alignBottom="@+id/anchorlightcenter"
+        android:layout_centerHorizontal="true" />
 
     <TimePicker
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/timePicker"
+        android:id="@+id/lightTimePicker"
         android:timePickerMode="spinner"
         android:theme="@style/ThemeOverlay.AppCompat.Dark"
-        android:layout_above="@+id/setbuttonlights"
+        android:layout_below="@+id/setnewtime"
         android:layout_centerHorizontal="true" />
-
-    <NumberPicker
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/numberPicker"
-        android:layout_above="@+id/setnewtime"
-        android:layout_centerHorizontal="true"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark" />
 
 </RelativeLayout>
