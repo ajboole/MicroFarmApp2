@@ -14,17 +14,12 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.util.List;
-
-//import au.com.bytecode.opencsv.CSVReader;
 
 public class LightScreen extends AppCompatActivity {
 
 
     private NumberPicker light_cycle_time;
     private Button light_set_button;
-    private String first;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +32,8 @@ public class LightScreen extends AppCompatActivity {
 
         final TimePicker light_starting_time = (TimePicker) findViewById(R.id.lightTimePicker);
 
-        //Toast.makeText(getBaseContext(), (int) light_starting_time.getHour() + " " +
-                //(int) light_starting_time.getMinute() + " changes set.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getBaseContext(), (int) light_starting_time.getHour() + " " +
+                (int) light_starting_time.getMinute() + " changes set.", Toast.LENGTH_SHORT).show();
 
         this.saveLogOnClick(view);
 
@@ -54,17 +49,9 @@ public class LightScreen extends AppCompatActivity {
 
     try {
 
-        //CSVReader reader = new CSVReader(new FileReader(FILENAME), ',');
-        //List<String[]> csvBody = reader.readAll();
-        //first = csvBody.get(0)[0];
-
-        //Toast.makeText(getBaseContext(), this.first, Toast.LENGTH_SHORT).show();
-
-
-
-        //FileOutputStream out = openFileOutput( FILENAME, Context.MODE_APPEND);
-        //out.write( entry.getBytes() );
-        //out.close();
+        FileOutputStream out = openFileOutput( FILENAME, Context.MODE_APPEND);
+        out.write( entry.getBytes() );
+        out.close();
 
     }catch (Exception e){
         e.printStackTrace();
