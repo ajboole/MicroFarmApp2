@@ -8,10 +8,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.util.Log;
 import android.content.Intent;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -27,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "mymessage";
 
+    ArrayList<Integer> settingsList = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +47,24 @@ public class MainActivity extends AppCompatActivity {
         ImageView myImageView = (ImageView) findViewById(R.id.imageSquare);
         Animation myFadeInAnimation = AnimationUtils.loadAnimation(getBaseContext(), R.anim.tween);
         myImageView.startAnimation(myFadeInAnimation);
+
+        readLog();
+
+        TextView light_text = (TextView)findViewById(R.id.lighttext);
+        TextView temp_text = (TextView)findViewById(R.id.temptext);
+        TextView humidity_text = (TextView)findViewById(R.id.humiditytext);
+
+        light_text.setText(settingsList.get(0).toString());
+        temp_text.setText(settingsList.get(3).toString());
+        humidity_text.setText(settingsList.get(5).toString());
+
+        //ImageView light_bar = (ImageView)findViewById(R.id.lightbar);
+
+        //int lightbarheight = settingsList.get(0) * 40;
+
+        //light_bar.getLayoutParams().height = lightbarheight;
+        //light_bar.getLayoutParams().width = 5;
+        //light_bar.requestLayout();
 
         Log.i(TAG, "onCreate");
 
@@ -112,6 +141,49 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Log.i(TAG, "onDestroy");
+    }
+    private void readLog(){
+
+        String FILENAME = "log.csv";
+        FileInputStream inputStream = null;
+        String temp;
+        String a[];
+
+        try {
+
+            inputStream = openFileInput(FILENAME);
+            byte[] reader = new byte[inputStream.available()];
+            while (inputStream.read(reader) != -1) {
+            }
+
+            Scanner s = new Scanner(new String(reader));
+            s.useDelimiter("\\n");
+
+            while (s.hasNext()) {
+
+                temp = s.next();
+                a = temp.split(",");
+                for (int i = 0; i < a.length; i++) {
+                    settingsList.add(Integer.parseInt(a[i]));
+                }
+
+
+            }
+
+            s.close();
+
+        } catch (Exception e) {
+            Log.e("Chart", e.getMessage());
+        } finally {
+            if (inputStream != null) {
+                try {
+                    inputStream.close();
+                } catch (IOException e) {
+                    Log.e("Chart", e.getMessage());
+                }
+            }
+        }
+
     }
 
     @Override

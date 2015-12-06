@@ -38,8 +38,9 @@ public class LightScreen extends AppCompatActivity {
         final NumberPicker light_cycle_time = (NumberPicker) findViewById(R.id.lightNumberPicker);
         light_cycle_time.setValue((int)settingsList.get(0));
 
+        //NOTE: CHANGE TO setHour AND setMinute for API 23
         final TimePicker light_starting_time = (TimePicker) findViewById(R.id.lightTimePicker);
-        light_starting_time.setCurrentHour((int)settingsList.get(1));
+        light_starting_time.setCurrentHour((int) settingsList.get(1));
         light_starting_time.setCurrentMinute((int) settingsList.get(2));
     }
 
@@ -54,6 +55,7 @@ public class LightScreen extends AppCompatActivity {
         final NumberPicker light_cycle_time = (NumberPicker) findViewById(R.id.lightNumberPicker);
         final TimePicker light_starting_time = (TimePicker) findViewById(R.id.lightTimePicker);
 
+        //NOTE: CHANGE TO setHour AND setMinute for API 23
         settingsList.set(0, light_cycle_time.getValue());
         settingsList.set(1, light_starting_time.getCurrentHour());
         settingsList.set(2, light_starting_time.getCurrentMinute());

@@ -94,4 +94,47 @@
         android:layout_toRightOf="@+id/homefragment"
         android:layout_toEndOf="@+id/homefragment" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="24"
+        android:id="@+id/lighttext"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#FFDE94"
+        android:editable="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="70"
+        android:id="@+id/temptext"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/lighttext"
+        android:textColor="#E64C3C"
+        android:editable="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="55"
+        android:id="@+id/humiditytext"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/temptext"
+        android:textColor="#3B97D3"
+        android:editable="true"/>
+<!--
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lightbar"
+        android:src="@drawable/lightbar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        />-->
+
 </RelativeLayout>

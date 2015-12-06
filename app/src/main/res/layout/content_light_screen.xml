@@ -98,4 +98,16 @@
         android:layout_below="@+id/setnewtime"
         android:layout_centerHorizontal="true" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="  hrs"
+        android:id="@+id/hourson"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="77dp"
+        android:layout_alignTop="@+id/lightNumberPicker"
+        android:layout_toRightOf="@+id/lightNumberPicker"
+        android:layout_toEndOf="@+id/lightNumberPicker" />
+
 </RelativeLayout>
