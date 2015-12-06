@@ -14,6 +14,7 @@ import android.widget.NumberPicker;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -23,7 +24,7 @@ import java.util.Scanner;
 public class LightScreen extends AppCompatActivity {
 
 
-    ArrayList<Integer> settingsList = new ArrayList<Integer>();
+    ArrayList<Integer> settingsList = new ArrayList<>();
     String regexSettingsList;
 
     @Override
@@ -38,14 +39,13 @@ public class LightScreen extends AppCompatActivity {
         light_cycle_time.setValue((int)settingsList.get(0));
 
         final TimePicker light_starting_time = (TimePicker) findViewById(R.id.lightTimePicker);
-        light_starting_time.setHour((int)settingsList.get(1));
-        light_starting_time.setMinute((int)settingsList.get(2));
+        light_starting_time.setCurrentHour((int)settingsList.get(1));
+        light_starting_time.setCurrentMinute((int) settingsList.get(2));
     }
 
     public void onClickSetLights(View view) {
 
         this.saveLogOnClick(view);
-        //this.readLog();
 
     }
 
@@ -55,12 +55,10 @@ public class LightScreen extends AppCompatActivity {
         final TimePicker light_starting_time = (TimePicker) findViewById(R.id.lightTimePicker);
 
         settingsList.set(0, light_cycle_time.getValue());
-        settingsList.set(1, light_starting_time.getHour());
-        settingsList.set(2, light_starting_time.getMinute());
+        settingsList.set(1, light_starting_time.getCurrentHour());
+        settingsList.set(2, light_starting_time.getCurrentMinute());
 
         String FILENAME = "log.csv";
-        //String entry = "" + light_starting_time.getHour() + "," +
-        //light_starting_time.getMinute() + "\n";
 
         try {
 
@@ -87,39 +85,44 @@ public class LightScreen extends AppCompatActivity {
         String temp;
         String a[];
 
-        try{
-            inputStream = openFileInput( FILENAME );
-            byte[] reader = new byte[ inputStream.available() ];
-            while( inputStream.read(reader) != -1){}
+            try {
 
-            Scanner s = new Scanner(new String(reader));
-            s.useDelimiter("\\n");
+                //FileOutputStream out = openFileOutput( FILENAME, Context.MODE_APPEND);
+                //out.write("0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0".getBytes());
+                //out.close();
 
-            while(s.hasNext()){
-
-                temp = s.next();
-                a = temp.split(",");
-                for(int i = 0; i < a.length; i++){
-                    settingsList.add(Integer.parseInt(a[i]));
+                inputStream = openFileInput(FILENAME);
+                byte[] reader = new byte[inputStream.available()];
+                while (inputStream.read(reader) != -1) {
                 }
 
+                Scanner s = new Scanner(new String(reader));
+                s.useDelimiter("\\n");
 
-            }
+                while (s.hasNext()) {
 
-            s.close();
+                    temp = s.next();
+                    a = temp.split(",");
+                    for (int i = 0; i < a.length; i++) {
+                        settingsList.add(Integer.parseInt(a[i]));
+                    }
 
-        }catch (Exception e){
-            Log.e("Chart", e.getMessage());
-        }finally{
-            if( inputStream != null){
-                try{
-                    inputStream.close();
-                }catch(IOException e){
-                    Log.e("Chart", e.getMessage());
+
+                }
+
+                s.close();
+
+            } catch (Exception e) {
+                Log.e("Chart", e.getMessage());
+            } finally {
+                if (inputStream != null) {
+                    try {
+                        inputStream.close();
+                    } catch (IOException e) {
+                        Log.e("Chart", e.getMessage());
+                    }
                 }
             }
-        }
-
 
     }
 
