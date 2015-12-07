@@ -1,3 +1,9 @@
+/**
+ * Adam Boole, John Schutz, Parker Jacobsen, Michael Thomas
+ * MicroFarm App, to control a raspberry pi powered micro climate box for growing plants.
+ * Project created for Human Computer Interaction
+**/
+
 package com.example.adam.microfarmapp2;
 
 import android.content.Context;
@@ -21,6 +27,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**LightScreen class lets us interact with the Light Settings Screen
+ * This class reads the data from the csv every time the screen is created
+ * There is a set button which first sets the new data locally,
+ * then it sends the newly created log.csv to the Server!
+ *
+ */
 public class LightScreen extends AppCompatActivity {
 
 
@@ -47,6 +59,7 @@ public class LightScreen extends AppCompatActivity {
     public void onClickSetLights(View view) {
 
         this.saveLogOnClick(view);
+        this.uploadLogOnClick();
 
     }
 
@@ -79,6 +92,28 @@ public class LightScreen extends AppCompatActivity {
         Toast.makeText(getBaseContext(), regexSettingsList.toString(), Toast.LENGTH_SHORT).show();
 
     }
+
+    /**
+     * This is the method to upload the csv file to the Server!
+     *
+     *
+     */
+
+    public void uploadLogOnClick(){
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+    //This method reads the log.csv file on the local path, and streams the values into the ArrayList settingsList
 
     private void readLog(){
 
