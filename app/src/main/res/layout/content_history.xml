@@ -52,4 +52,13 @@
         android:layout_marginBottom="56dp"
         />
 
+    <CalendarView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/calendarView"
+        android:layout_marginTop="33dp"
+        android:layout_below="@+id/fragment6"
+        android:layout_centerHorizontal="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark" />
+
 </RelativeLayout>

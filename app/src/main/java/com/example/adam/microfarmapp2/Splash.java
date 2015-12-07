@@ -28,7 +28,7 @@ public class Splash extends Activity {
 
         //this downloads up to date data from the server every time the app first starts.
         //We can comment this out if the server is non functional
-        new Downloader().execute("");
+        //new Downloader().execute("");
 
         //Animations for splash screen
         //uses splash.xml in layout

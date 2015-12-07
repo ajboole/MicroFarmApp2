@@ -15,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.NumberPicker;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -32,6 +33,7 @@ public class TempScreen extends AppCompatActivity {
     //The program first reads the CSV into these every time the screen is created.
     ArrayList<Integer> settingsList = new ArrayList<>();
     String regexSettingsList;
+    int isCelsius;
 
     //Screen Creation Method
     @Override
@@ -41,6 +43,19 @@ public class TempScreen extends AppCompatActivity {
 
         //readLog method called
         readLog();
+        isCelsius = settingsList.get(9);
+
+        //Text view for toggling between F and C
+        TextView degrees = (TextView)findViewById(R.id.degreeF);
+        TextView degrees2 = (TextView)findViewById(R.id.degreeF2);
+        
+        //checks if celsius is true and changes accordingly
+        if (isCelsius == 1){
+
+            degrees.setText(" ° C");
+            degrees2.setText(" ° C");
+
+        }
 
         //sets the default values to the widgets
         final NumberPicker temp_number = (NumberPicker) findViewById(R.id.tempNumberPicker);

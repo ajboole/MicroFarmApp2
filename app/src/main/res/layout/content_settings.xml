@@ -82,14 +82,15 @@
             android:layout_below="@+id/fragment7"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="54dp"
-            android:checked="false" />
+            android:onClick="onRadioButtonClicked"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="celcius"
+            android:text="celsius"
             android:textColor="#FFFFFF"
             android:buttonTint="@color/colorPrimary"
             android:id="@+id/radioButton2"
+            android:onClick="onRadioButtonClicked"
             />
 
 
