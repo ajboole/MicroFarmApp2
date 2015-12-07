@@ -13,6 +13,17 @@
     tools:showIn="@layout/activity_statistics"
     android:background="#162028">
 
+    <!--
+        Created by Adam Boole
+        The statistics content xml file sets up the statistics screen.
+        Two fragments are located here for home which is consistent across every screen
+        and the interface fragment which is consistent across statistics, history, and settings.
+
+        The statistics screen is used to display statistics recieved from the server about the MicroFarm box.
+
+        The text is set up using a row column grid layout.
+    -->
+
     <fragment
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

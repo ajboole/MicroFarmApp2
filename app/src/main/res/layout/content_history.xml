@@ -13,6 +13,13 @@
     tools:showIn="@layout/activity_history"
     android:background="#162028">
 
+    <!--
+        Created by Adam Boole
+        The history content xml file sets up the history settings screen.
+        Two fragments are located here for home which is consistent across every screen
+        and the interface fragment which is consistent across statistics, history, and settings.
+    -->
+
 
     <fragment
         android:layout_width="wrap_content"

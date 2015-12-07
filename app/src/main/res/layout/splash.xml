@@ -9,6 +9,13 @@
     android:background="#162028"
     >
 
+    <!--
+        Created by Adam Boole
+        The splash screen xml sets up the MicroFarm logo screen appropriately
+        One image is static for the logo
+        The other image is dynamic and animates to spin during the splash screen.
+    -->
+
     <View
         android:id="@+id/anchor6"
         android:layout_width="0dp"
@@ -37,11 +44,6 @@
 
 
         ></ImageView>
-    <!--android:paddingBottom="49dp"
-    android:paddingRight="59dp"
-
-    android:layout_centerVertical="true"
-    android:layout_centerHorizontal="true"-->
 
     <ImageView
         android:layout_width="400dp"

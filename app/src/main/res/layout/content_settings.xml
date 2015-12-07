@@ -13,6 +13,17 @@
     tools:showIn="@layout/activity_settings"
     android:background="#162028">
 
+    <!--
+        Created by Adam Boole
+        The settings content xml file sets up the settings screen.
+        Two fragments are located here for home which is consistent across every screen
+        and the interface fragment which is consistent across statistics, history, and settings.
+        The downloadbutton is defined here which is pressed when the user wishes to download data
+        to local storage from the server.
+
+        Radio button toggle is also defined choose if Celsius is used or not.
+    -->
+
     <fragment
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

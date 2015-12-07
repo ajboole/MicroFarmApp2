@@ -13,6 +13,19 @@
     tools:showIn="@layout/activity_water_screen"
     android:background="#162028">
 
+    <!--
+        Created by Adam Boole
+        Content xml for water screen.
+        This is used to set up all the layout widgets and functionality.
+
+        The water screen uses number picker widgets and time picker widgets to modify the MicroFarm box.
+        The set button is consistent across light, temp, water, and humidity screens
+        The set button sets the modified data to the log.csv and updates it to the server.
+
+        This screen also uses a home fragment consistent across every screen in placement
+        and functionality.
+    -->
+
     <View
         android:id="@+id/anchorwater"
         android:layout_width="30dp"

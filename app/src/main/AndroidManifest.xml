@@ -5,6 +5,11 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
+    <!--
+        Created by Adam Boole
+        The manifest file controls all screen files and sets the themes for each.
+    -->
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"

@@ -1,5 +1,5 @@
 /**
- * Adam Boole, John Schutz, Parker Jacobsen, Michael Thomas
+ * Adam Boole
  * MicroFarm App, to control a raspberry pi powered micro climate box for growing plants.
  * Project created for Human Computer Interaction
  **/
@@ -38,6 +38,11 @@ import android.content.res.AssetManager;
  * Main Activity also known as the Home Screen where we can access all
  * the elements (light, temp, water, humidity, stats, history, settings)
  *
+ * It is important that any screen you could need for the app can be accessed by this one screen
+ * This keeps the user from having to search through multiple screens to find what they are looking for.
+ *
+ * This is also known as the home screen.
+ *
  * uses tween.xml from anim
  * and a bunch of xml files in the layout
  *
@@ -65,17 +70,11 @@ public class MainActivity extends AppCompatActivity {
         TextView temp_text = (TextView)findViewById(R.id.temptext);
         TextView humidity_text = (TextView)findViewById(R.id.humiditytext);
 
+        //Small values for testing if it works on the home screen, this will be commented out later
+        //values tested are for lights, temp, and humidity
         light_text.setText(settingsList.get(0).toString());
         temp_text.setText(settingsList.get(3).toString());
-        humidity_text.setText(settingsList.get(5).toString());
-
-        //ImageView light_bar = (ImageView)findViewById(R.id.lightbar);
-
-        //int lightbarheight = settingsList.get(0) * 40;
-
-        //light_bar.getLayoutParams().height = lightbarheight;
-        //light_bar.getLayoutParams().width = 5;
-        //light_bar.requestLayout();
+        humidity_text.setText(settingsList.get(7).toString());
 
         Log.i(TAG, "onCreate");
 
@@ -113,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //Methods for understanding where errors occur in the App
     @Override
     protected void onStart() {
         super.onStart();
@@ -154,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "onDestroy");
     }
 
+    //Reads the data from the local log.csv to an Array List settingsList
     private void readLog(){
 
         String FILENAME = "log.csv";

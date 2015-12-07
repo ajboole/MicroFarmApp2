@@ -14,6 +14,18 @@
     android:background="#162028"
     >
 
+    <!--
+        Created by Adam Boole
+        Content xml for Main screen.
+        This is used to set up all the layout widgets and functionality.
+
+        The Main screen also known as the home screen contains buttons that can take the user
+        to any other screen of choice. Any screen is accessible from the home screen by design.
+
+        This screen also uses a home fragment consistent across every screen in placement
+        and functionality.
+    -->
+
     <View
         android:id="@+id/anchor"
         android:layout_width="0dp"
@@ -127,14 +139,5 @@
         android:layout_toRightOf="@+id/temptext"
         android:textColor="#3B97D3"
         android:editable="true"/>
-<!--
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lightbar"
-        android:src="@drawable/lightbar"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        />-->
 
 </RelativeLayout>

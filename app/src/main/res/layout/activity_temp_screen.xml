@@ -7,6 +7,11 @@
     android:fitsSystemWindows="true"
     tools:context="com.example.adam.microfarmapp2.TempScreen">
 
+    <!--
+        Created by Adam Boole
+        Activity XML Files are for basic screen layout initialization
+    -->
+
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

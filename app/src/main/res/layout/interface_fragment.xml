@@ -3,6 +3,11 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     >
 
+    <!--
+        Created by Adam Boole
+        The interface fragment xml contains layout data for the interface fragment
+    -->
+
     <Button
         android:layout_width="90dp"
         android:layout_height="20dp"
