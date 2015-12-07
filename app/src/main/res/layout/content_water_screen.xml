@@ -13,16 +13,26 @@
     tools:showIn="@layout/activity_water_screen"
     android:background="#162028">
 
-    <TextView
+    <View
+        android:id="@+id/anchorwater"
+        android:layout_width="30dp"
+        android:layout_height="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0dp"
+        android:background="#162028"
+        android:layout_marginTop="180dp"
+        />
+
+    <com.example.adam.microfarmapp2.FontBrownBold
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="WATER"
-        android:textColor="#FFFFFF"
-        android:id="@+id/textView2"
-        android:layout_alignParentTop="true"
+        android:text="{ water settings }"
+        android:id="@+id/watertitle"
+        android:textColor="#3B97D3"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="170dp" />
+        android:layout_alignBottom="@+id/fragment3"
+        />
 
     <fragment
         android:layout_width="wrap_content"
@@ -33,5 +43,109 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         tools:layout="@layout/home_fragment" />
+
+    <com.example.adam.microfarmapp2.FontBrownLight
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="{ water cycle }"
+        android:id="@+id/watercycle"
+        android:textColor="#FFFFFF"
+        android:layout_above="@+id/day"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp" />
+
+    <com.example.adam.microfarmapp2.myNumberPicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/waterdayNumberPicker"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        max="14"
+        min="0"
+        android:layout_above="@+id/intensity"
+        android:layout_toLeftOf="@+id/anchorwater"
+        />
+
+    <com.example.adam.microfarmapp2.FontBrownRegular
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" days  "
+        android:id="@+id/day"
+        android:textColor="#3B97D3"
+        android:layout_above="@+id/waterdayNumberPicker"
+        android:layout_alignRight="@+id/waterdayNumberPicker"
+        android:layout_alignEnd="@+id/waterdayNumberPicker"
+        android:layout_marginRight="8dp"
+        />
+
+    <com.example.adam.microfarmapp2.myNumberPicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/waterhourNumberPicker"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        max="24"
+        min="0"
+        android:layout_above="@+id/intensity"
+        android:layout_toRightOf="@+id/anchorwater"
+         />
+
+    <com.example.adam.microfarmapp2.FontBrownRegular
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  hours "
+        android:id="@+id/hours"
+        android:textColor="#3B97D3"
+        android:layout_above="@+id/waterhourNumberPicker"
+        android:layout_alignLeft="@+id/waterhourNumberPicker"
+        android:layout_marginLeft="5dp"
+        />
+
+    <com.example.adam.microfarmapp2.FontBrownLight
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="{ intensity }"
+        android:id="@+id/intensity"
+        android:textColor="#FFFFFF"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/waterIntensityNumberPicker"
+        android:layout_marginTop="20dp"
+        />
+
+    <com.example.adam.microfarmapp2.myNumberPicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/waterIntensityNumberPicker"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        max="20"
+        min="0"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=" sec"
+        android:id="@+id/degreeF"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="76dp"
+        android:layout_alignTop="@+id/waterIntensityNumberPicker"
+        android:layout_toRightOf="@+id/waterIntensityNumberPicker"
+        android:layout_toEndOf="@+id/waterIntensityNumberPicker" />
+
+    <Button
+        android:layout_width="90dp"
+        android:layout_height="20dp"
+        android:id="@+id/setbuttonwater"
+        android:background="@drawable/set_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
+        android:onClick="onClickSetWater"
+        />
+
+
 
 </RelativeLayout>

@@ -30,10 +30,10 @@ public class HumidityScreen extends AppCompatActivity {
         readLog();
 
         final NumberPicker humidity_number = (NumberPicker) findViewById(R.id.humidityNumberPicker);
-        humidity_number.setValue((int) settingsList.get(5));
+        humidity_number.setValue((int) settingsList.get(7));
 
         final NumberPicker humidity_buffer = (NumberPicker) findViewById(R.id.humidityBufferNumberPicker);
-        humidity_buffer.setValue((int) settingsList.get(6));
+        humidity_buffer.setValue((int) settingsList.get(8));
     }
 
     public void onClickSetHumidity(View view) {
@@ -48,8 +48,8 @@ public class HumidityScreen extends AppCompatActivity {
         final NumberPicker humidity_buffer = (NumberPicker) findViewById(R.id.humidityBufferNumberPicker);
 
         //NOTE: CHANGE TO setHour AND setMinute for API 23
-        settingsList.set(5, humidity_number.getValue());
-        settingsList.set(6, humidity_buffer.getValue());
+        settingsList.set(7, humidity_number.getValue());
+        settingsList.set(8, humidity_buffer.getValue());
 
         String FILENAME = "log.csv";
 

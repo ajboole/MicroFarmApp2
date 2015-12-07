@@ -44,5 +44,189 @@
         android:layout_marginBottom="96dp"
         />
 
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gridLayout"
+        android:layout_alignTop="@+id/fragment7"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+
+        <com.example.adam.microfarmapp2.FontBrownLight
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Days Running: "
+            android:id="@+id/daysrunning"
+            android:textColor="#FFFFFF"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/waterIntensityNumberPicker"
+            android:layout_marginTop="70dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            />
+
+        <com.example.adam.microfarmapp2.FontBrownLight
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 "
+            android:id="@+id/intensity"
+            android:textColor="#FFFFFF"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/waterIntensityNumberPicker"
+            android:layout_marginTop="70dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            />
+
+        <com.example.adam.microfarmapp2.FontBrownLight
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Average Temp: "
+            android:id="@+id/averagetemp"
+            android:textColor="#FFFFFF"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/waterIntensityNumberPicker"
+            android:layout_marginTop="30dp"
+            android:layout_row="1"
+            android:layout_column="0"
+            />
+
+        <com.example.adam.microfarmapp2.FontBrownLight
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="70 °F"
+            android:id="@+id/tempvariable"
+            android:textColor="#FFFFFF"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/waterIntensityNumberPicker"
+            android:layout_marginTop="30dp"
+            android:layout_row="1"
+            android:layout_column="1"
+            />
+
+        <com.example.adam.microfarmapp2.FontBrownLight
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Max Temp: "
+            android:id="@+id/maxtemp"
+            android:textColor="#FFFFFF"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/waterIntensityNumberPicker"
+            android:layout_marginTop="30dp"
+            android:layout_row="2"
+            android:layout_column="0"
+            />
+
+        <com.example.adam.microfarmapp2.FontBrownLight
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="79 °F"
+            android:id="@+id/maxtempvariable"
+            android:textColor="#FFFFFF"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/waterIntensityNumberPicker"
+            android:layout_marginTop="30dp"
+            android:layout_row="2"
+            android:layout_column="1"
+            />
+
+
+    </GridLayout>
+
+    <View
+        android:id="@+id/anchorwater"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0dp"
+        android:background="#FFFFFF"
+        android:layout_marginTop="180dp"
+        />
+
+
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/fragment7"
+        android:layout_toRightOf="@+id/anchorwater">
+
+        <com.example.adam.microfarmapp2.FontBrownLight
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gallons Used: "
+            android:id="@+id/gallonsused"
+            android:textColor="#FFFFFF"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_marginTop="70dp"
+            />
+
+        <com.example.adam.microfarmapp2.FontBrownLight
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=".05 gal "
+            android:id="@+id/gallonsused2"
+            android:textColor="#FFFFFF"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_marginTop="70dp"
+            />
+
+        <com.example.adam.microfarmapp2.FontBrownLight
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Avg Watts/Day: "
+            android:id="@+id/averagewatts"
+            android:textColor="#FFFFFF"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/waterIntensityNumberPicker"
+            android:layout_marginTop="30dp"
+            android:layout_row="1"
+            android:layout_column="0"
+            />
+
+        <com.example.adam.microfarmapp2.FontBrownLight
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1200"
+            android:id="@+id/wattsvariable"
+            android:textColor="#FFFFFF"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/waterIntensityNumberPicker"
+            android:layout_marginTop="30dp"
+            android:layout_row="1"
+            android:layout_column="1"
+            />
+
+        <com.example.adam.microfarmapp2.FontBrownLight
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Min Temp: "
+            android:id="@+id/mintemp"
+            android:textColor="#FFFFFF"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/waterIntensityNumberPicker"
+            android:layout_marginTop="30dp"
+            android:layout_row="2"
+            android:layout_column="0"
+            />
+
+        <com.example.adam.microfarmapp2.FontBrownLight
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="60 °F"
+            android:id="@+id/mintempvariable"
+            android:textColor="#FFFFFF"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/waterIntensityNumberPicker"
+            android:layout_marginTop="30dp"
+            android:layout_row="2"
+            android:layout_column="1"
+            />
+
+    </GridLayout>
+
 
 </RelativeLayout>
