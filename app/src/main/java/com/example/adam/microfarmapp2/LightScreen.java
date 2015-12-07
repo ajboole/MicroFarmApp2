@@ -1,5 +1,5 @@
 /**
- * Adam Boole, John Schutz, Parker Jacobsen, Michael Thomas
+ * Adam Boole
  * MicroFarm App, to control a raspberry pi powered micro climate box for growing plants.
  * Project created for Human Computer Interaction
 **/
@@ -31,13 +31,11 @@ import java.util.Scanner;
 
 /**LightScreen class lets us interact with the Light Settings Screen
  * This class reads the data from the csv every time the screen is created
- * There is a set button which first sets the new data locally,
- * then it sends the newly created log.csv to the Server!
- *
  */
 public class LightScreen extends AppCompatActivity {
 
-
+    //Uses settingsList and regexSettingsList as a temporary storage for CSV file values.
+    //The program first reads the CSV into these every time the screen is created.
     ArrayList<Integer> settingsList = new ArrayList<>();
     String regexSettingsList;
 
@@ -47,8 +45,10 @@ public class LightScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_light_screen);
 
+        //Screen Creation Method
         readLog();
 
+        //sets the default values to the widgets
         final NumberPicker light_cycle_time = (NumberPicker) findViewById(R.id.lightNumberPicker);
         light_cycle_time.setValue((int)settingsList.get(0));
 
@@ -58,6 +58,7 @@ public class LightScreen extends AppCompatActivity {
         light_starting_time.setCurrentMinute((int) settingsList.get(2));
     }
 
+    //Click Listener, first saves widget settings to Local CSV, then calls the Uploader to give them to the server.
     public void onClickSetLights(View view) {
 
         this.saveLogOnClick(view);
@@ -65,6 +66,7 @@ public class LightScreen extends AppCompatActivity {
 
     }
 
+    //this method sets values from widgets to settingsList, then the log.csv
     public void saveLogOnClick(View view){
 
         final NumberPicker light_cycle_time = (NumberPicker) findViewById(R.id.lightNumberPicker);
@@ -95,12 +97,7 @@ public class LightScreen extends AppCompatActivity {
 
     }
 
-    /**
-     * This is the method to upload the csv file to the Server!
-     *
-     *
-     */
-
+    //this method reads the local log.csv to the Array List settingsList
     private void readLog(){
 
         String FILENAME = "log.csv";
@@ -109,7 +106,7 @@ public class LightScreen extends AppCompatActivity {
         String a[];
 
             try {
-
+                //Uncomment this code for phones that don't yet have a CSV file.
                 //FileOutputStream out = openFileOutput( FILENAME, Context.MODE_APPEND);
                 //out.write("0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0".getBytes());
                 //out.close();

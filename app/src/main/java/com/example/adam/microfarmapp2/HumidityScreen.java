@@ -1,3 +1,9 @@
+/**
+ * Adam Boole
+ * MicroFarm App, to control a raspberry pi powered micro climate box for growing plants.
+ * Project created for Human Computer Interaction
+ **/
+
 package com.example.adam.microfarmapp2;
 
 import android.content.Context;
@@ -17,18 +23,25 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+//This class is for the Humidity Settings Screen
+
 public class HumidityScreen extends AppCompatActivity {
 
+    //Uses settingsList and regexSettingsList as a temporary storage for CSV file values.
+    //The program first reads the CSV into these every time the screen is created.
     ArrayList<Integer> settingsList = new ArrayList<>();
     String regexSettingsList;
 
+    //Screen Creation Method
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_humidity_screen);
 
+        //readLog method called
         readLog();
 
+        //sets the default values to the widgets
         final NumberPicker humidity_number = (NumberPicker) findViewById(R.id.humidityNumberPicker);
         humidity_number.setValue((int) settingsList.get(7));
 
@@ -36,6 +49,7 @@ public class HumidityScreen extends AppCompatActivity {
         humidity_buffer.setValue((int) settingsList.get(8));
     }
 
+    //Click Listener, first saves widget settings to Local CSV, then calls the Uploader to give them to the server.
     public void onClickSetHumidity(View view) {
 
         this.saveLogOnClick(view);
@@ -43,12 +57,12 @@ public class HumidityScreen extends AppCompatActivity {
 
     }
 
+    //this method sets values from widgets to settingsList, then the log.csv
     public void saveLogOnClick(View view){
 
         final NumberPicker humidity_number = (NumberPicker) findViewById(R.id.humidityNumberPicker);
         final NumberPicker humidity_buffer = (NumberPicker) findViewById(R.id.humidityBufferNumberPicker);
 
-        //NOTE: CHANGE TO setHour AND setMinute for API 23
         settingsList.set(7, humidity_number.getValue());
         settingsList.set(8, humidity_buffer.getValue());
 
@@ -72,6 +86,7 @@ public class HumidityScreen extends AppCompatActivity {
 
     }
 
+    //this method reads the local log.csv to the Array List settingsList
     private void readLog(){
 
         String FILENAME = "log.csv";

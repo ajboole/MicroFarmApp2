@@ -1,3 +1,9 @@
+/**
+ * Created by Adam on 11/24/2015.
+ * MicroFarm App, to control a raspberry pi powered micro climate box for growing plants.
+ * Project created for Human Computer Interaction
+ **/
+
 package com.example.adam.microfarmapp2;
 
 import android.annotation.TargetApi;
@@ -13,7 +19,6 @@ import android.app.Activity;
 import android.widget.Button;
 
 /**
- * Created by Adam on 11/24/2015.
  * This Class is created for the Home Button Fragment
  * This will go on every Screen in the Interface to provide a way to get back to home.
  */

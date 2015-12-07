@@ -1,8 +1,11 @@
+/**
+ * Created by Adam on 11/24/2015.
+ * MicroFarm App, to control a raspberry pi powered micro climate box for growing plants.
+ * Project created for Human Computer Interaction
+ **/
+
 package com.example.adam.microfarmapp2;
 
-/**
- * Created by Adam on 11/30/2015.
- */
 import android.annotation.TargetApi;
 import android.app.Fragment;
 import android.content.Intent;
@@ -15,15 +18,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-/**
- * Created by Adam on 11/24/2015.
- */
+//This is a fragment class To easily switch between statistics, history, and settings
+//This is all accessible from the home screen
+
 public class InterfaceFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.interface_fragment, container, false);
 
+        //gets the info on all the button widgets
         final Button statsbutton = (Button) view.findViewById(R.id.statisticsbutton);
         final Button historybutton = (Button) view.findViewById(R.id.historybutton);
         final Button settingsbutton = (Button) view.findViewById(R.id.settingsbutton);
@@ -39,6 +43,7 @@ public class InterfaceFragment extends Fragment {
                 }
         );
 
+        //listens for history button to be clicked then calls button clicked method
         historybutton.setOnClickListener(
                 new View.OnClickListener(){
                     public void onClick(View v){
@@ -49,6 +54,7 @@ public class InterfaceFragment extends Fragment {
                 }
         );
 
+        //listens for settings button to be clicked then calls button clicked method
         settingsbutton.setOnClickListener(
                 new View.OnClickListener(){
                     public void onClick(View v){
@@ -69,12 +75,9 @@ public class InterfaceFragment extends Fragment {
         Intent i = new Intent(getActivity().getBaseContext(), Statistics.class);
         startActivity(i);
 
-
-
-        //overridePendingTransition(R.transition.animation1, R.transition.animation2);
-
     }
 
+    //method which changes the active view to the history screen
     @TargetApi(Build.VERSION_CODES.M)
     public void historyButtonClicked(View view){
 
@@ -83,6 +86,7 @@ public class InterfaceFragment extends Fragment {
 
     }
 
+    //method which changes the active view to the settings screen
     @TargetApi(Build.VERSION_CODES.M)
     public void settingsButtonClicked(View view){
 

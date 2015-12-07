@@ -1,5 +1,5 @@
 /**
- * Adam Boole, John Schutz, Parker Jacobsen, Michael Thomas
+ * Adam Boole
  * MicroFarm App, to control a raspberry pi powered micro climate box for growing plants.
  * Project created for Human Computer Interaction
  **/
@@ -16,6 +16,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+//The history screen will display past statistics
 public class History extends AppCompatActivity {
 
     @Override

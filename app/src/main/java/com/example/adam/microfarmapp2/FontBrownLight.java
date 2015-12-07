@@ -1,5 +1,5 @@
 /**
- * Adam Boole, John Schutz, Parker Jacobsen, Michael Thomas
+ * Adam Boole
  * MicroFarm App, to control a raspberry pi powered micro climate box for growing plants.
  * Project created for Human Computer Interaction
  **/
@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 /**
  * Created by Adam on 11/24/2015.
+ * This class is for implementing the custom font Brown Light
  */
 public class FontBrownLight extends TextView {
 
