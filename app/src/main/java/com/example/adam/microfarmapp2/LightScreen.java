@@ -20,10 +20,12 @@ import android.widget.NumberPicker;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -59,7 +61,7 @@ public class LightScreen extends AppCompatActivity {
     public void onClickSetLights(View view) {
 
         this.saveLogOnClick(view);
-        this.uploadLogOnClick();
+        new Uploader().execute("");
 
     }
 
@@ -89,7 +91,7 @@ public class LightScreen extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        Toast.makeText(getBaseContext(), regexSettingsList.toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getBaseContext(), "Changes Set", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -98,22 +100,6 @@ public class LightScreen extends AppCompatActivity {
      *
      *
      */
-
-    public void uploadLogOnClick(){
-
-
-
-
-
-
-
-
-
-
-
-    }
-
-    //This method reads the log.csv file on the local path, and streams the values into the ArrayList settingsList
 
     private void readLog(){
 

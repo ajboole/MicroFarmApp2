@@ -21,6 +21,8 @@ public class Splash extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash);
 
+        new Downloader().execute("");
+
         //Animations for splash screen
         //uses splash.xml in layout
         //uses rotate.xml in anim

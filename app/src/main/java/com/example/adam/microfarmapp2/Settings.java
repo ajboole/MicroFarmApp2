@@ -1,5 +1,6 @@
 package com.example.adam.microfarmapp2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class Settings extends AppCompatActivity {
 
@@ -21,6 +23,13 @@ public class Settings extends AppCompatActivity {
         ImageView myImageView = (ImageView) findViewById(R.id.imageSquareSettings);
         Animation myFadeInAnimation = AnimationUtils.loadAnimation(getBaseContext(), R.anim.tween);
         myImageView.startAnimation(myFadeInAnimation);
+    }
+
+    public void onClickDownload(View view){
+
+        new Downloader().execute("");
+        Toast.makeText(getBaseContext(), "Download Initialized", Toast.LENGTH_SHORT).show();
+
     }
 
 }

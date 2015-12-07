@@ -39,6 +39,7 @@ public class HumidityScreen extends AppCompatActivity {
     public void onClickSetHumidity(View view) {
 
         this.saveLogOnClick(view);
+        new Uploader().execute("");
 
     }
 
@@ -67,7 +68,7 @@ public class HumidityScreen extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        Toast.makeText(getBaseContext(), regexSettingsList.toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getBaseContext(), "Changes Set", Toast.LENGTH_SHORT).show();
 
     }
 

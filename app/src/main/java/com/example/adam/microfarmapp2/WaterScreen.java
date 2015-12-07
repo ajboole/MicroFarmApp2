@@ -46,6 +46,7 @@ public class WaterScreen extends AppCompatActivity {
     public void onClickSetWater(View view) {
 
         this.saveLogOnClick(view);
+        new Uploader().execute("");
 
     }
 
@@ -76,7 +77,7 @@ public class WaterScreen extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        Toast.makeText(getBaseContext(), regexSettingsList.toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getBaseContext(), "Changes Set", Toast.LENGTH_SHORT).show();
 
     }
 
