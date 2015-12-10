@@ -48,7 +48,7 @@ public class TempScreen extends AppCompatActivity {
         //Text view for toggling between F and C
         TextView degrees = (TextView)findViewById(R.id.degreeF);
         TextView degrees2 = (TextView)findViewById(R.id.degreeF2);
-        
+
         //checks if celsius is true and changes accordingly
         if (isCelsius == 1){
 

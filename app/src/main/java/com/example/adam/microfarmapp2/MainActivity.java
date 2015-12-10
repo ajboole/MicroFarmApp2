@@ -6,15 +6,27 @@
 
 package com.example.adam.microfarmapp2;
 
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Shader;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.util.Log;
 import android.content.Intent;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.EditText;
@@ -30,6 +42,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Handler;
+
 import android.content.res.AssetManager;
 
 
@@ -66,19 +80,68 @@ public class MainActivity extends AppCompatActivity {
 
         readLog();
 
-        TextView light_text = (TextView)findViewById(R.id.lighttext);
-        TextView temp_text = (TextView)findViewById(R.id.temptext);
-        TextView humidity_text = (TextView)findViewById(R.id.humiditytext);
+        //TextView light_text = (TextView)findViewById(R.id.lighttext);
+        //TextView temp_text = (TextView)findViewById(R.id.temptext);
+        //TextView humidity_text = (TextView)findViewById(R.id.humiditytext);
 
         //Small values for testing if it works on the home screen, this will be commented out later
         //values tested are for lights, temp, and humidity
-        light_text.setText(settingsList.get(0).toString());
-        temp_text.setText(settingsList.get(3).toString());
-        humidity_text.setText(settingsList.get(7).toString());
+
+        //light_text.setText(settingsList.get(0).toString());
+        //temp_text.setText(settingsList.get(3).toString());
+        //humidity_text.setText(settingsList.get(7).toString());
+
+        ImageView imgView = (ImageView)findViewById(R.id.imgView);
+        WindowManager wManager = getWindowManager();
+        Display display = wManager.getDefaultDisplay();
+        DisplayMetrics metrics = new DisplayMetrics();
+        display.getMetrics(metrics);
+        int screen_width=metrics.widthPixels;
+        int screen_height=metrics.heightPixels;
+
+        imgView.setImageBitmap(drawLines(screen_width, screen_height));
+
+
 
         Log.i(TAG, "onCreate");
 
     }
+
+    private Bitmap drawLines(int bgWidth, int bgHeight){
+
+        int lightbarHeight = bgHeight - (settingsList.get(0) * 40);
+
+
+        Paint lightbar = new Paint();
+        lightbar.setColor(Color.parseColor("#FFDE94"));
+        //lightbar.setAlpha(255);
+
+        Paint tempbar = new Paint();
+        tempbar.setColor(Color.parseColor("#E64C3C"));
+        //tempbar.setAlpha(255);
+
+        Paint humiditybar = new Paint();
+        humiditybar.setColor(Color.parseColor("#3B97D3"));
+        //humiditybar.setAlpha(255);
+
+        Bitmap bitmapBackground= Bitmap.createBitmap(bgWidth,bgHeight, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmapBackground);
+
+        lightbar.setStrokeWidth(1);
+        canvas.drawLine(5, lightbarHeight, 5, bgHeight - 20, lightbar);
+
+        tempbar.setStrokeWidth(1);
+        canvas.drawLine(20, (float)(bgHeight - (settingsList.get(3) * 9.6)), 20, bgHeight - 20, tempbar);
+
+        humiditybar.setStrokeWidth(1);
+        canvas.drawLine(33, (float)(bgHeight - (settingsList.get(7) * 9.6)), 33, bgHeight - 20, humiditybar);
+
+        return bitmapBackground;
+
+
+    }
+
+
 
     //Method to go to LightScreen when Light button is pressed
     public void onClickLight(View view){
