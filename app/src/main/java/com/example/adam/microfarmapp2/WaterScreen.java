@@ -62,7 +62,7 @@ public class WaterScreen extends AppCompatActivity {
     public void onClickSetWater(View view) {
 
         this.saveLogOnClick(view);
-        new Uploader().execute("");
+        //new Uploader().execute("");
 
     }
 

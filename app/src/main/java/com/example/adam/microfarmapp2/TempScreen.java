@@ -71,7 +71,7 @@ public class TempScreen extends AppCompatActivity {
     public void onClickSetTemp(View view) {
 
         this.saveLogOnClick(view);
-        new Uploader().execute("");
+        //new Uploader().execute("");
 
     }
 

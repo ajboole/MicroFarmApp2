@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Bitmap drawLines(int bgWidth, int bgHeight){
 
-        int lightbarHeight = bgHeight - (settingsList.get(0) * 40);
+        int lightbarHeight = bgHeight - (settingsList.get(0) * 80);
 
 
         Paint lightbar = new Paint();
@@ -127,14 +127,27 @@ public class MainActivity extends AppCompatActivity {
         Bitmap bitmapBackground= Bitmap.createBitmap(bgWidth,bgHeight, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmapBackground);
 
-        lightbar.setStrokeWidth(1);
-        canvas.drawLine(5, lightbarHeight, 5, bgHeight - 20, lightbar);
+        if (settingsList.get(0) != 0){
 
-        tempbar.setStrokeWidth(1);
-        canvas.drawLine(20, (float)(bgHeight - (settingsList.get(3) * 9.6)), 20, bgHeight - 20, tempbar);
+            lightbar.setStrokeWidth(1);
+            canvas.drawLine(10, lightbarHeight, 10, bgHeight - 40, lightbar);
 
-        humiditybar.setStrokeWidth(1);
-        canvas.drawLine(33, (float)(bgHeight - (settingsList.get(7) * 9.6)), 33, bgHeight - 20, humiditybar);
+        }
+
+        if (settingsList.get(3) >= 3) {
+
+            tempbar.setStrokeWidth(1);
+            canvas.drawLine(39, (float) (bgHeight - (settingsList.get(3) * 19.2)), 39, bgHeight - 40, tempbar);
+
+        }
+
+        if (settingsList.get(7) >= 3){
+
+            humiditybar.setStrokeWidth(1);
+            canvas.drawLine(66, (float)(bgHeight - (settingsList.get(7) * 19.2)), 66, bgHeight - 40, humiditybar);
+
+        }
+
 
         return bitmapBackground;
 

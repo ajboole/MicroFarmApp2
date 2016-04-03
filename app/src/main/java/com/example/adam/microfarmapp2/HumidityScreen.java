@@ -53,7 +53,7 @@ public class HumidityScreen extends AppCompatActivity {
     public void onClickSetHumidity(View view) {
 
         this.saveLogOnClick(view);
-        new Uploader().execute("");
+        //new Uploader().execute("");
 
     }
 

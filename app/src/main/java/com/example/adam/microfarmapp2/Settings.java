@@ -117,7 +117,7 @@ public class Settings extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        new Uploader().execute("");
+        //new Uploader().execute("");
 
         Toast.makeText(getBaseContext(), "Changes Set", Toast.LENGTH_SHORT).show();
     }

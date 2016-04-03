@@ -62,7 +62,7 @@ public class LightScreen extends AppCompatActivity {
     public void onClickSetLights(View view) {
 
         this.saveLogOnClick(view);
-        new Uploader().execute("");
+        //new Uploader().execute("");
 
     }
 
